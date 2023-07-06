@@ -12,7 +12,6 @@ import com.android.customization.model.grid.GridOptionsManager;
 import com.android.customization.model.grid.GridSectionController;
 import com.android.customization.model.mode.DarkModeSectionController;
 import com.android.customization.model.mode.DarkModeSnapshotRestorer;
-import com.android.customization.model.themedicon.ThemedIconPackSectionController;
 import com.android.customization.model.themedicon.ThemedIconSectionController;
 import com.android.customization.model.themedicon.ThemedIconSwitchProvider;
 import com.android.customization.model.themedicon.domain.interactor.ThemedIconInteractor;
@@ -203,7 +202,7 @@ public final class DefaultCustomizationSections implements CustomizationSections
             CustomizationSectionNavigationController sectionNavigationController,
             @Nullable Bundle savedInstanceState,
             DisplayUtils displayUtils) {
-        final List<CustomizationSectionController<?>> sectionControllers = new ArrayList<>();
+        List<CustomizationSectionController<?>> sectionControllers = new ArrayList<>();
 
         // Wallpaper section.
         sectionControllers.add(
@@ -234,12 +233,6 @@ public final class DefaultCustomizationSections implements CustomizationSections
                 mThemedIconInteractor,
                 savedInstanceState,
                 mThemedIconSnapshotRestorer));
-
-        // Custom themed icon pack section.
-        sectionControllers.add(new ThemedIconPackSectionController(
-                activity, sectionNavigationController,
-                ThemedIconSwitchProvider.getInstance(activity),
-                lifecycleOwner, savedInstanceState));
 
         // App grid section.
         sectionControllers.add(

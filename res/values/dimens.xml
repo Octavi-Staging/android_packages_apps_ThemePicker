@@ -156,9 +156,6 @@
     <!-- Size for the icon of a quick affordance for the lock screen in the picker experience. -->
     <dimen name="keyguard_quick_affordance_icon_size">24dp</dimen>
 
-    <!-- For the custom themed icons -->
-    <dimen name="default_margin">16dp</dimen>
-
     <dimen name="clock_carousel_item_width">190dp</dimen>
     <dimen name="clock_carousel_item_height">380dp</dimen>
     <dimen name="clock_carousel_item_margin">16dp</dimen>
